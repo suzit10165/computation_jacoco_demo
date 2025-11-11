@@ -2,29 +2,23 @@ package testing.demo;
 
 public class Calculator {
 
-    public int add(int value1, int value2) {
-        return value1 + value2;
+    public int add(int a, int b) {
+        return a + b;
     }
 
-    public int substract(int value1, int value2) {
-        return value1 - value2;
+    public int sub(int a, int b) {
+        return a - b;
     }
 
-    public int multiple(int value1, int value2) {
-        return value1 * value2;
+    public int mul(int a, int b) {
+        return a * b;
     }
 
-    public int divide(int value1, int value2) {
-        if (value2 == 0)
-            throw new IllegalArgumentException("Denominator value cannot be zero.");
-        return value1 / value2;
-    }
-
-    public static void main(String[] args) {
-        Calculator calc = new Calculator();
-        System.out.println("Addition: " + calc.add(10, 5));
-        System.out.println("Subtraction: " + calc.substract(10, 5));
-        System.out.println("Multiplication: " + calc.multiple(10, 5));
-        System.out.println("Division: " + calc.divide(10, 5));
+    public int div(int a, int b) {
+        if (b == 0) {
+            throw new ArithmeticException("divide by zero");
+        }
+        return a / b;
     }
 }
+
