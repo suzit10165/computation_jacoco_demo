@@ -1,18 +1,10 @@
 pipeline {
     agent any
 
-    tools {
-        jdk 'jdk17'
-        maven 'Maven 3'
-    }
-
     stages {
         stage('Checkout') {
-            steps {
-                checkout scm
-            }
+            steps { checkout scm }
         }
-
         stage('Build & Test') {
             steps {
                 bat 'mvn -B clean test jacoco:report'
